@@ -27,7 +27,7 @@ export default function TaskWrapper() {
   return (
     <div className="task-wrapper">
       {tasks.map((task) => (
-        <Task key={task.id} data={task} tasks = {tasks}/>
+        <Task key={task.id} data={task} tasks={tasks} setTasks = {setTasks}/>
       ))}
     </div>
   );

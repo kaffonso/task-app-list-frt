@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaTrash, FaEdit, FaCheck } from 'react-icons/fa'
 import '../../styles/task.css'
 
-export default function Task(props) {
+export default function Task(props,{setTasks}) {
   const createdAt = new Date(props.data.createdAt);
   const [description, setDescription] = useState(props.data.description);
 
@@ -18,7 +18,7 @@ export default function Task(props) {
       );
 
       console.log(response);
-      window.location = "/";
+      setTasks(props.tasks )
     } catch (error) {
       console.error(error);
     }
@@ -41,7 +41,8 @@ export default function Task(props) {
       );
 
       console.log(response);
-      window.location = "/";
+      window.location = '/'
+
     } catch (err) {
       console.log(err);
     }
