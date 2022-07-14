@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaPlusCircle } from "react-icons/fa";
 import '../../styles/inputTask.css'
 
 export default function InputTask() {
@@ -29,7 +30,7 @@ export default function InputTask() {
 
   return (
     <div className="input-task">
-      <form method="post" onSubmit={handleSubmit}>
+      <form method="post" onSubmit={handleSubmit} id="form-submit">
         <input
           type="text"
           name="task"
@@ -38,7 +39,7 @@ export default function InputTask() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <input type="submit" value="ADD" />
+       <button type="submit" id="btn-submit">{<FaPlusCircle size={20}/>}</button>
       </form>
     </div>
   );

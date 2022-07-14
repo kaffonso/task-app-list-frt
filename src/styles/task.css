@@ -12,6 +12,16 @@
   text-overflow: ellipsis;
 }
 
+.task-description-completed{
+  width: 70%;
+  white-space: nowrap;
+  text-decoration:line-through;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: line-through;
+}
+
+
 .task button{
   border: 0;
   background-color: white;

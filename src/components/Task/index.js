@@ -48,10 +48,12 @@ export default function Task(props) {
   };
 
   const status = JSON.stringify(props.data.completed);
+  
+  const style = status === 'false' ? 'task-description' : 'task-description-completed'
 
   return (
     <div className="task">
-      <p className="task-description">{props.data.description}</p>
+      <p className={style}>{props.data.description}</p>
       <p className="task-date">{createdAt.getDay() + "/" +createdAt.getMonth() + "/" + createdAt.getFullYear()}</p>
       
       <button type="button" value="" onClick={handleEdit}> {<FaEdit/>}</button> 

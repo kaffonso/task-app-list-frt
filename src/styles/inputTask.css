@@ -2,8 +2,23 @@
   display: flex;
   justify-content: center;
   margin: 2em;
+  align-items: center;
 }
 
 #input-task{
   width: 45em;
+}
+
+#btn-submit{
+  background-color: white;
+  border: 0;
+  margin: 0;
+}
+
+#form-submit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
 }
