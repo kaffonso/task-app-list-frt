@@ -49,16 +49,17 @@ export default function Task(props) {
 
   const status = JSON.stringify(props.data.completed);
   
-  const style = status === 'false' ? 'task-description' : 'task-description-completed'
+  const task_style = status === 'false' ? 'task' : 'task task-completed'
+  const btn_style = status === 'false' ? 'task-btn' : 'task-btn-disabled'
 
   return (
-    <div className="task">
-      <p className={style}>{props.data.description}</p>
+    <div className={task_style}>
+      <p className="task-description">{props.data.description}</p>
       <p className="task-date">{createdAt.getDay() + "/" +createdAt.getMonth() + "/" + createdAt.getFullYear()}</p>
       
-      <button type="button" value="" onClick={handleEdit}> {<FaEdit/>}</button> 
-      <button type="button" value="" onClick={handleComplete}> {<FaCheck/>} </button>
-      <button type="button" value="" onClick={handleDelete}>{<FaTrash/>}</button> 
+      <button className={btn_style} type="button" value="" onClick={handleEdit}> {<FaEdit/>}</button> 
+      <button className="task-btn" type="button" value="" onClick={handleComplete}> {<FaCheck/>} </button>
+      <button className="task-btn" type="button" value="" onClick={handleDelete}>{<FaTrash/>}</button> 
     </div>
   );
 }
