@@ -34,6 +34,7 @@ export default function InputTask() {
           type="text"
           name="task"
           id="input-task"
+          placeholder="Write your todo"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />

@@ -5,6 +5,7 @@ import './styles/app.css'
 function App() {
   return (
     <div className="App">
+      <h1>TODO LIST APP</h1>
       <InputTask />
       <TaskWrapper />
     </div>

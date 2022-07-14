@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaTrash, FaEdit, FaCheck } from 'react-icons/fa'
 import '../../styles/task.css'
 
 export default function Task(props) {
@@ -52,10 +53,10 @@ export default function Task(props) {
     <div className="task">
       <p className="task-description">{props.data.description}</p>
       <p className="task-date">{createdAt.getDay() + "/" +createdAt.getMonth() + "/" + createdAt.getFullYear()}</p>
-      <p className="task-status">{status}</p>
-      <input type="button" value="Delete" onClick={handleDelete} />
-      <input type="button" value="Edit" onClick={handleEdit} />
-      <input type="button" value="Complete" onClick={handleComplete} />
+      
+      <button type="button" value="" onClick={handleEdit}> {<FaEdit/>}</button> 
+      <button type="button" value="" onClick={handleComplete}> {<FaCheck/>} </button>
+      <button type="button" value="" onClick={handleDelete}>{<FaTrash/>}</button> 
     </div>
   );
 }
