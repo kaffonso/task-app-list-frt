@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Task from "../Task";
 
 export default function TaskWrapper() {
   const [tasks, setTasks] = useState([]);
@@ -22,8 +23,8 @@ export default function TaskWrapper() {
 
   return (
     <div className="task-wrapper">
-      {tasks.map(data => (
-        <li className="a">{data.description}</li>
+      {tasks.map((data) => (
+        <Task data={data} />
       ))}
     </div>
   );
