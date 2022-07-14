@@ -19,7 +19,6 @@ export default function TaskWrapper() {
     fecthAll();
   }, []);
 
-  console.log(tasks);
 
   return (
     <div className="task-wrapper">
