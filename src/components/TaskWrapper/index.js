@@ -1,26 +1,30 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
-export default function TaskWrapper(){
-  
+export default function TaskWrapper() {
+  const [tasks, setTasks] = useState([]);
+
   const fecthAll = async () => {
     try {
-      const response = await fetch("http://localhost:3333/tasks")
-      console.log(await response.json())
+      const response = await fetch("http://localhost:3333/tasks");
+      const data = await response.json();
 
+      setTasks(data);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   useEffect(() => {
-    fecthAll()
-  })
-  
+    fecthAll();
+  }, []);
 
+  console.log(tasks);
 
-  return(
+  return (
     <div className="task-wrapper">
-
+      {tasks.map(data => (
+        <li className="a">{data.description}</li>
+      ))}
     </div>
-  )
+  );
 }
