@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../../styles/inputTask.css'
 
 export default function InputTask() {
   const [description, setDescription] = useState("");

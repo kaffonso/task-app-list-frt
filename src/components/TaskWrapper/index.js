@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Task from "../Task";
+import '../../styles/taskWrapper.css'
 
 export default function TaskWrapper() {
   const [tasks, setTasks] = useState([]);

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './styles.css'
+import '../../styles/task.css'
 
 export default function Task(props) {
   const createdAt = new Date(props.data.createdAt);
@@ -51,15 +51,10 @@ export default function Task(props) {
   return (
     <div className="task">
       <p className="task-description">{props.data.description}</p>
-      <p className="task-date">{createdAt.getDay() +
-          "/" +
-          createdAt.getMonth() +
-          "/" +
-          createdAt.getFullYear()}
-      </p>
+      <p className="task-date">{createdAt.getDay() + "/" +createdAt.getMonth() + "/" + createdAt.getFullYear()}</p>
       <p className="task-status">{status}</p>
       <input type="button" value="Delete" onClick={handleDelete} />
-      <input type="button" value="Edit" />
+      <input type="button" value="Edit" onClick={handleEdit} />
       <input type="button" value="Complete" onClick={handleComplete} />
     </div>
   );
