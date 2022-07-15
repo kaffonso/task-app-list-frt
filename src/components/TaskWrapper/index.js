@@ -21,9 +21,11 @@ export default function TaskWrapper() {
   const fecthCompleted = async () => {
     try {
       const response = await fetch("http://localhost:3333/tasks/completed");
-      const data = await response.json();
+      const data = await response.json();  
+      
+      console.log(data)
 
-      data.sort((a, b) => a.completed / b.completed); //order task by completed
+      data.sort((a, b) => a.id + b.id); //order task by id
 
       setTasks(data);
     } catch (error) {
@@ -36,7 +38,7 @@ export default function TaskWrapper() {
       const response = await fetch("http://localhost:3333/tasks/uncompleted");
       const data = await response.json();
 
-      data.sort((a, b) => a.completed / b.completed); //order task by completed
+      data.sort((a, b) => a.id + b.id); //order task by id
 
       setTasks(data);
     } catch (error) {
@@ -65,6 +67,10 @@ export default function TaskWrapper() {
     fecthAll();
   }, []);
 
+
+  console.log(tasks)
+  const no_data_style = tasks === null ? "no-data-enabled" : "no-data-disabled"
+
   return (
     <>
       <div className="task-filters">
@@ -78,6 +84,7 @@ export default function TaskWrapper() {
         {tasks.map((task) => (
           <Task key={task.id} data={task} tasks={tasks} setTasks={setTasks} />
         ))}
+        <p className={no_data_style}></p>
       </div>
     </>
   );

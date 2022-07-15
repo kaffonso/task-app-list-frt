@@ -22,3 +22,10 @@
   font-family: 'Ubuntu';
 }
 
+.no-data-enabled{
+  display: none;
+}
+
+.no-data-disabled{
+  display: flex;
+}
