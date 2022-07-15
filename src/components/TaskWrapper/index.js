@@ -44,6 +44,23 @@ export default function TaskWrapper() {
     }
   };
 
+  const handleDeleteAll = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(`http://localhost:3333/tasks`,{
+          method: "DELETE",
+        }
+      );
+
+      const data = await response.json();
+      setTasks(data)
+
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     fecthAll();
   }, []);
@@ -54,6 +71,7 @@ export default function TaskWrapper() {
         <button onClick={fecthAll}> All </button>
         <button onClick={fecthCompleted}> Done </button>
         <button onClick={fecthUncompleted}> Undone </button>
+        <button onClick={handleDeleteAll}> Delete All </button>
       </div>
     
       <div className="task-wrapper">

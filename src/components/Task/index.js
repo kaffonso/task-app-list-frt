@@ -56,11 +56,10 @@ export default function Task(props) {
   const task_check = status === 'false' ? false : true
 
   return (
-    <div className={task_style} onClick={handleComplete}>
+    <div className={task_style} >
       <input type="checkbox" className="task-check" onChange={handleComplete} checked={task_check} />
-      <p className="task-description">{description}</p>
+      <p className="task-description" onClick={handleComplete}>{description}</p>
       <button className={btn_style} type="button" value="" onClick={handleEdit}> {<FaEdit/>}</button> 
-
       <p className="task-date">{createdAt.getDay() + "/" +createdAt.getMonth() + "/" + createdAt.getFullYear()}</p>
       <button className="task-btn" type="button" value="" onClick={handleDelete}>{<FaTrash/>}</button> 
     </div>
