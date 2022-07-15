@@ -4,19 +4,26 @@
   width: 100%;
   padding: 0.6em 1em;
   border-radius: 5px;
-  margin: 0.2em 0em;
+  margin: 0.1em 0em;
   color: #2e2e2e;
   background-color:rgb(49, 225, 231);
+  border: 2px solid transparent;
+  transition: 0.1s ease-in-out;
+}
+
+.task:hover{
+  border: 2px solid white;
+  transition: 0.4s ease-in-out;
 }
 
 .task-completed{
   color: white;
   background-color: rgb(97, 99, 109);
-  text-decoration:line-through;
+  text-decoration: line-through;
 }
 
 .task-description{
-  width: 70%;
+  width: 65%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -30,6 +37,11 @@
 
 .task-btn-disabled{
   visibility: hidden;
+}
+
+.tasks{
+  display: flex;
+  justify-content: center;
 }
 
 
