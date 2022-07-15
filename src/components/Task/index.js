@@ -8,6 +8,7 @@ export default function Task(props) {
   const id = props.data.id
   const tasks = props.tasks
   const setTasks = props.setTasks  
+  const setUpdate = props.setUpdate
 
   const handleDelete = async () => {
     try {
@@ -33,8 +34,7 @@ export default function Task(props) {
 
     try {
       const response = await fetch(
-        `http://localhost:3333/task/complete/${id}`,
-        {
+        `http://localhost:3333/task/complete/${id}`,{
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export default function Task(props) {
 
       // this setUpdate uses a random number everutime
       // triggering the useEffect on the parent component, forcing to update the list 
-      props.setUpdate(Math.random)
+      setUpdate(Math.random)
       console.log(response);
 
     } catch (error) {
