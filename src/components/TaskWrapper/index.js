@@ -4,6 +4,7 @@ import "../../styles/taskWrapper.css";
 
 export default function TaskWrapper() {
   const [tasks, setTasks] = useState([]);
+  const [update, setUpdate] = useState([])
 
   const fecthAll = async () => {
     try {
@@ -46,9 +47,7 @@ export default function TaskWrapper() {
     }
   };
 
-  const handleDeleteAll = async (e) => {
-    e.preventDefault();
-
+  const handleDeleteAll = async () => {
     try {
       const response = await fetch(`http://localhost:3333/tasks`,{
           method: "DELETE",
@@ -65,7 +64,7 @@ export default function TaskWrapper() {
 
   useEffect(() => {
     fecthAll();
-  }, []);
+  }, [update]);
 
 
   console.log(tasks)
@@ -82,7 +81,7 @@ export default function TaskWrapper() {
     
       <div className="task-wrapper">
         {tasks.map((task) => (
-          <Task key={task.id} data={task} tasks={tasks} setTasks={setTasks} />
+          <Task key={task.id} data={task} tasks={tasks} setTasks={setTasks} setUpdate={setUpdate}/>
         ))}
         <p className={no_data_style}></p>
       </div>
