@@ -71,9 +71,9 @@ export default function TaskWrapper() {
     <>
       <div className="task-actions">
         <div className="task-filters">
-          <button onClick={fecthAll}> All </button>
-          <button onClick={fecthCompleted}> Done </button>
-          <button onClick={fecthUncompleted}> Undone </button>
+          <span onClick={fecthAll}> All </span>
+          <span onClick={fecthUncompleted}> Pending </span>
+          <span onClick={fecthCompleted}> Completed </span>
         </div>
         <div className="task-handles">
           <button onClick={handleDeleteAll}> Delete All </button>
