@@ -6,7 +6,12 @@
 }
 
 #input-task{
-  width: 45em;
+  width: 42em;
+  height: 2.8em;
+  padding: 1em;
+  border: 2px solid rgba(34, 34, 34, 0.267);
+  font-size: 0.9em;
+  border-radius: 10px;
 }
 
 #btn-submit{

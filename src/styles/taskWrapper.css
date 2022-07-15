@@ -3,7 +3,22 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid #818080;
-  padding: 1em;
   border-radius: 10px;
 }
+
+.task-filters{
+  padding: 1em;
+}
+
+.task-filters button{
+  width: 15em;
+  margin: 0.2em;
+  cursor: pointer;
+  padding: 0em 2em;
+  border: 2px solid rgb(110, 110, 110);
+  background-color: rgb(110, 110, 110);
+  color: white;
+  border-radius: 5px;
+  font-family: 'Ubuntu';
+}
+

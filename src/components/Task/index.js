@@ -1,10 +1,10 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { FaTrash, FaEdit, FaCheck } from 'react-icons/fa'
 import '../../styles/task.css'
 
-export default function Task(props,{setTasks}) {
+export default function Task(props) {
   const createdAt = new Date(props.data.createdAt);
-  const [description, setDescription] = useState(props.data.description);
+  // const [description, setDescription] = useState(props.data.description);
 
   const handleDelete = async (e) => {
     e.preventDefault();
@@ -18,7 +18,8 @@ export default function Task(props,{setTasks}) {
       );
 
       console.log(response);
-      setTasks(props.tasks )
+      window.location = '/'
+
     } catch (error) {
       console.error(error);
     }
