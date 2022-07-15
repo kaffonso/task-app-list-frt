@@ -1,9 +1,10 @@
-// import { useState } from "react";
+import { useState } from "react";
 import { FaTrash, FaEdit, FaCheck } from 'react-icons/fa'
 import '../../styles/task.css'
 
 export default function Task(props) {
   const createdAt = new Date(props.data.createdAt);
+  const description = props.data.description
   // const [description, setDescription] = useState(props.data.description);
 
   const handleDelete = async (e) => {
@@ -53,14 +54,14 @@ export default function Task(props) {
   
   const task_style = status === 'false' ? 'task' : 'task task-completed'
   const btn_style = status === 'false' ? 'task-btn' : 'task-btn-disabled'
+  const task_check = status === 'false' ? false : true
 
   return (
-    <div className={task_style}>
-      <p className="task-description">{props.data.description}</p>
+    <div className={task_style} onClick={handleComplete}>
+      <input type="checkbox" className="task-check" onChange={handleComplete} checked={task_check} />
+      <p className="task-description">{description}</p>
       <p className="task-date">{createdAt.getDay() + "/" +createdAt.getMonth() + "/" + createdAt.getFullYear()}</p>
-      
       <button className={btn_style} type="button" value="" onClick={handleEdit}> {<FaEdit/>}</button> 
-      <button className="task-btn" type="button" value="" onClick={handleComplete}> {<FaCheck/>} </button>
       <button className="task-btn" type="button" value="" onClick={handleDelete}>{<FaTrash/>}</button> 
     </div>
   );
