@@ -4,7 +4,7 @@ import "../../styles/taskWrapper.css";
 
 export default function TaskWrapper() {
   const [tasks, setTasks] = useState([]);
-  const [update, setUpdate] = useState([])
+  const [update, setUpdate] = useState([]);
 
   const fecthAll = async () => {
     try {
@@ -22,9 +22,9 @@ export default function TaskWrapper() {
   const fecthCompleted = async () => {
     try {
       const response = await fetch("http://localhost:3333/tasks/completed");
-      const data = await response.json();  
-      
-      console.log(data)
+      const data = await response.json();
+
+      console.log(data);
 
       data.sort((a, b) => a.id + b.id); //order task by id
 
@@ -49,14 +49,12 @@ export default function TaskWrapper() {
 
   const handleDeleteAll = async () => {
     try {
-      const response = await fetch(`http://localhost:3333/tasks`,{
-          method: "DELETE",
-        }
-      );
+      const response = await fetch(`http://localhost:3333/tasks`, {
+        method: "DELETE",
+      });
 
       const data = await response.json();
-      setTasks(data)
-
+      setTasks(data);
     } catch (error) {
       console.error(error);
     }
@@ -66,22 +64,31 @@ export default function TaskWrapper() {
     fecthAll();
   }, [update]);
 
-
-  console.log(tasks)
-  const no_data_style = tasks === null ? "no-data-enabled" : "no-data-disabled"
+  console.log(tasks);
+  const no_data_style = tasks === null ? "no-data-enabled" : "no-data-disabled";
 
   return (
     <>
-      <div className="task-filters">
-        <button onClick={fecthAll}> All </button>
-        <button onClick={fecthCompleted}> Done </button>
-        <button onClick={fecthUncompleted}> Undone </button>
-        <button onClick={handleDeleteAll}> Delete All </button>
+      <div className="task-actions">
+        <div className="task-filters">
+          <button onClick={fecthAll}> All </button>
+          <button onClick={fecthCompleted}> Done </button>
+          <button onClick={fecthUncompleted}> Undone </button>
+        </div>
+        <div className="task-handles">
+          <button onClick={handleDeleteAll}> Delete All </button>
+        </div>
       </div>
-    
+
       <div className="task-wrapper">
         {tasks.map((task) => (
-          <Task key={task.id} data={task} tasks={tasks} setTasks={setTasks} setUpdate={setUpdate}/>
+          <Task
+            key={task.id}
+            data={task}
+            tasks={tasks}
+            setTasks={setTasks}
+            setUpdate={setUpdate}
+          />
         ))}
         <p className={no_data_style}></p>
       </div>

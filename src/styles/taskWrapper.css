@@ -6,12 +6,8 @@
   border-radius: 10px;
 }
 
-.task-filters{
-  padding: 1em;
-}
-
-.task-filters button{
-  width: 11.7em;
+.task-actions button{
+  width: 9em;
   margin: 0.2em;
   cursor: pointer;
   padding: 0em 2em;
@@ -20,6 +16,17 @@
   color: white;
   border-radius: 5px;
   font-family: 'Ubuntu';
+}
+
+.task-actions{
+  width: 40em;
+  display: flex;
+  margin: 0em 0em 1em 0em;
+  justify-content: space-between;
+}
+
+.task-filters{
+
 }
 
 .no-data-enabled{

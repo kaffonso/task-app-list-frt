@@ -7,17 +7,21 @@
 
 #input-task{
   width: 42em;
-  height: 2.8em;
+  height: 3em;
+  outline: none;
   padding: 1em;
   border: 2px solid rgba(34, 34, 34, 0.267);
   font-size: 0.9em;
   border-radius: 10px;
+  -webkit-user-select:text;
+  user-select: text;
 }
 
 #btn-submit{
-  background-color: white;
+  background-color: transparent;
   border: 0;
   margin: 0;
+  color:#f06616;
 }
 
 #form-submit{
