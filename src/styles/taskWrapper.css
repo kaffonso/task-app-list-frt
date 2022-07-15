@@ -18,6 +18,12 @@
   margin:0em 0.5em 0em 0.5em;
   background-color: transparent;
   color: darkgrey;
+  cursor: pointer;
+}
+
+.task-filters span:hover{
+  color: rgb(94, 94, 94);
+  transition: 0.2s ease-in-out;
 }
 
 .task-handles button{
@@ -33,10 +39,19 @@
 
 }
 
-.no-data-enabled{
-  display: none;
+.no-tasks-enabled{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0.6em 1em;
+  border-radius: 5px;
+  margin: 0.1em 0em;
+  color: white;
+  background-color:rgb(107, 184, 92);
+  border: 2px solid transparent;
+  transition: 0.1s ease-in-out;
 }
 
-.no-data-disabled{
-  display: flex;
+.no-tasks-disabled{
+  display: none;
 }

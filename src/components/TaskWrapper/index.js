@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { FaCheck } from "react-icons/fa";
 import Task from "../Task";
 import "../../styles/taskWrapper.css";
 
@@ -64,8 +65,8 @@ export default function TaskWrapper() {
     fecthAll();
   }, [update]);
 
-  console.log(tasks);
-  const no_data_style = tasks === null ? "no-data-enabled" : "no-data-disabled";
+  console.log(tasks.length);
+  const no_tasks_style = tasks.length === 0 ? "no-tasks-enabled" : "no-tasks-disabled";
 
   return (
     <>
@@ -90,7 +91,7 @@ export default function TaskWrapper() {
             setUpdate={setUpdate}
           />
         ))}
-        <p className={no_data_style}></p>
+        <p className={no_tasks_style}> All Done </p>
       </div>
     </>
   );
