@@ -2,8 +2,8 @@
   width: 40em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  border-radius: 10px;
+  height: 55vh;
+  overflow: scroll;
 }
 
 .task-actions{
@@ -35,8 +35,6 @@
   border: none;
   color: white;
   border-radius: 5px;
-  font-family: 'Ubuntu';
-
 }
 
 .no-tasks-enabled{
