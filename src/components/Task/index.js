@@ -85,7 +85,7 @@ export default function Task(props) {
   };
 
   const task_style = status === false ? "task" : "task task-completed";
-  const btn_style = status === false ? "task-btn" : "task-btn-disabled";
+  const btn_style = status === false ? "task-btn btn-edit" : "task-btn-disabled";
 
   return (
     <>
@@ -104,7 +104,7 @@ export default function Task(props) {
           {<FaEdit size={16} title="Edit" />}
         </button>
         <p className="task-date">{day + "/" + month + "/" + year}</p>
-        <button className="task-btn" type="button" onClick={handleDelete}>
+        <button className="task-btn btn-delete" type="button" onClick={handleDelete}>
           {<FaTrash size={15} title="Delete" />}
         </button>
       </div>
@@ -114,7 +114,7 @@ export default function Task(props) {
           <div className="modal-header">
             <p>Edit Task</p>
             <span className="close" onClick={handleCloseModal}>
-              <FaTimes color="red" size={20}/>
+              <FaTimes size={20}/>
             </span>
           </div>
           <div className="modal-input">

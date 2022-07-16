@@ -115,3 +115,8 @@
 #form-edit{
   display: flex;
 }
+
+.close{
+  margin-right: 2%;
+  color: brown;
+}

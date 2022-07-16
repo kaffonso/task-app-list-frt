@@ -7,7 +7,7 @@
   border-radius: 5px;
   margin: 0.1em 0em;
   color: #2e2e2e;
-  background: #2cb5e8;
+  background: #ececec;
   border: 2px solid transparent;
   transition: 0.1s ease-in-out;
 }
@@ -48,7 +48,17 @@
 .task-check{
   width: 1.2em;
   border: 0;
-  
 }
+
+.btn-edit:hover{
+  color: rgb(30, 115, 155); 
+  transition: 0.2s ease-in-out;
+}
+
+.btn-delete:hover{
+  color: brown;
+  transition: 0.2s ease-in-out;
+}
+
 
 
