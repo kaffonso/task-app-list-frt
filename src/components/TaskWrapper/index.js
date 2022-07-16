@@ -65,7 +65,6 @@ export default function TaskWrapper() {
     fecthAll();
   }, [update]);
 
-  console.log(tasks.length);
   const no_tasks_style = tasks.length === 0 ? "no-tasks-enabled" : "no-tasks-disabled";
 
   return (
@@ -91,7 +90,7 @@ export default function TaskWrapper() {
             setUpdate={setUpdate}
           />
         ))}
-        <p className={no_tasks_style}> All Done </p>
+        <p className={no_tasks_style}> All Done {<FaCheck/>}</p>
       </div>
     </>
   );
