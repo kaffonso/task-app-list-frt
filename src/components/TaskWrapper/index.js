@@ -91,7 +91,7 @@ export default function TaskWrapper() {
             setUpdate={setUpdate}
           />
         ))}
-        <p className={no_tasks_style}> All Done {<FaCheck/>}</p>
+        <p className={no_tasks_style}> ALL DONE &nbsp; {<FaCheck/>}</p>
       </div>
 
       <div className={task_counter_style}>
