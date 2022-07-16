@@ -1,14 +1,16 @@
-import { FaTrash, FaEdit } from 'react-icons/fa'
+import { FaTrash, FaEdit, FaTimes } from 'react-icons/fa'
+import { useState } from 'react'
 import '../../styles/task.css'
 
 export default function Task(props) {
   const createdAt = new Date(props.data.createdAt);
-  const description = props.data.description
+  const [description, setDescription] = useState (props.data.description)
   const status = props.data.completed;
   const id = props.data.id
   const tasks = props.tasks
   const setTasks = props.setTasks  
   const setUpdate = props.setUpdate
+
 
   const handleDelete = async () => {
     try {
@@ -27,8 +29,6 @@ export default function Task(props) {
       console.error(error);
     }
   };
-
-  const handleEdit = async () => {};
 
   const handleComplete = async () => {
 
@@ -52,16 +52,63 @@ export default function Task(props) {
     }
   };
 
+  const handleEdit = async (e) => {
+    e.preventDefault()
+
+    try {
+      const body = { description };
+      const response = await fetch(`http://localhost:3333/task/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+
+      setUpdate(Math.random)
+      console.log(response);
+    } catch (err) {
+
+    }
+  };
+
+  const handleOpenModal = async () => {
+    const modal = document.getElementById(id);
+    modal.style.display = "block";
+  };
+
+  const handleCloseModal = () =>{
+    const modal = document.getElementById(id);
+    modal.style.display = "none";
+  }
+
   const task_style = status === false ? 'task' : 'task task-completed'
   const btn_style = status ===  false ? 'task-btn' : 'task-btn-disabled'
 
   return (
-    <div className={task_style} >
-      <input type="checkbox" className="task-check" onChange={handleComplete} checked={status} />
-      <p className="task-description" onClick={handleComplete}>{description}</p>
-      <button className={btn_style} type="button" value="" onClick={handleEdit}> {<FaEdit/>}</button> 
-      <p className="task-date">{createdAt.getDay() + "/" +createdAt.getMonth() + "/" + createdAt.getFullYear()}</p>
-      <button className="task-btn" type="button" value="" onClick={handleDelete}>{<FaTrash/>}</button> 
-    </div>
+    <>
+      <div className={task_style} >
+        <input type="checkbox" className="task-check" onChange={handleComplete} checked={status} />
+        <p className="task-description" onClick={handleComplete}>{description}</p>
+        <button className={btn_style} type="button" value="" onClick={handleOpenModal}>{<FaEdit/>}</button> 
+        <p className="task-date">{createdAt.getDay() + "/" +createdAt.getMonth() + "/" + createdAt.getFullYear()}</p>
+        <button className="task-btn" type="button" value="" onClick={handleDelete}>{<FaTrash/>}</button> 
+      </div>
+
+      <div id={id} className="modal">
+        <div className="modal-content">
+          <span className="close" onClick={handleCloseModal}><FaTimes /></span>
+          <form method="post" onSubmit={handleEdit} id="form-submit">
+            <input
+              type="text"
+              id="input-task"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+            <button type="submit" id="btn-submit"> <FaEdit/> </button>
+          </form>
+        </div>
+      </div>
+    </> 
   );
 }

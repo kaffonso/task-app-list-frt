@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaPlusCircle } from "react-icons/fa";
+import { FaPlusSquare } from "react-icons/fa";
 import '../../styles/inputTask.css'
 
 export default function InputTask() {
@@ -35,11 +35,11 @@ export default function InputTask() {
           type="text"
           name="task"
           id="input-task"
-          placeholder="Write your todo"
+          placeholder="Add a new task"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-       <button type="submit" id="btn-submit">{<FaPlusCircle size={25}/>}</button>
+       <button type="submit" id="btn-submit">{<FaPlusSquare size={25}/>}</button>
       </form>
     </div>
   );
