@@ -65,7 +65,8 @@ export default function TaskWrapper() {
     fecthAll();
   }, [update]);
 
-  const no_tasks_style = tasks.length === 0 ? "no-tasks-enabled" : "no-tasks-disabled";
+  const no_tasks_style = tasks.length === 0 ? "no-tasks" : "no-tasks-disabled";
+  const task_counter_style = tasks.length === 0 ? "task-counter task-counter-disabled" : "task-counter";
 
   return (
     <>
@@ -91,6 +92,10 @@ export default function TaskWrapper() {
           />
         ))}
         <p className={no_tasks_style}> All Done {<FaCheck/>}</p>
+      </div>
+
+      <div className={task_counter_style}>
+        <p>Task: {tasks.length}</p>
       </div>
     </>
   );

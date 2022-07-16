@@ -9,11 +9,12 @@
 .App{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
 h1{
-  margin-top: 2em;
+  margin-top: 1em;
   letter-spacing: 0.6em;
 }
