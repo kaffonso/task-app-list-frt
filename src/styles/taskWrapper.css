@@ -87,7 +87,7 @@
   display: block;
   background-color: #fefefe;
   margin: 14% auto; /* 15% from the top and centered */
-  padding: 35px;
+  padding: 30px;
   width: 50%; 
   border-radius: 10px;
 }
@@ -97,7 +97,7 @@
   border: 0;
   margin: 0;
   margin: 0 0 0 0.6em;
-  color:rgb(107, 184, 92);
+  color:rgb(30, 115, 155);
 }
 
 #edit-task{

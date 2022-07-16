@@ -39,7 +39,7 @@ export default function InputTask() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-       <button type="submit" id="btn-submit">{<FaPlusSquare size={25}/>}</button>
+       <button type="submit" id="btn-submit">{<FaPlusSquare size={25} title="Add"/>}</button>
       </form>
     </div>
   );
