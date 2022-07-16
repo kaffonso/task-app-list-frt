@@ -4,12 +4,16 @@ import '../../styles/task.css'
 
 export default function Task(props) {
   const createdAt = new Date(props.data.createdAt);
+  const day = createdAt.getDate()
+  const month = createdAt.getMonth() + 1
+  const year = createdAt.getFullYear()
   const [description, setDescription] = useState (props.data.description)
   const status = props.data.completed;
   const id = props.data.id
   const tasks = props.tasks
   const setTasks = props.setTasks  
   const setUpdate = props.setUpdate
+
 
 
   const handleDelete = async () => {
@@ -85,13 +89,15 @@ export default function Task(props) {
   const task_style = status === false ? 'task' : 'task task-completed'
   const btn_style = status ===  false ? 'task-btn' : 'task-btn-disabled'
 
+  console.log(createdAt.getMonth())
+
   return (
     <>
       <div className={task_style} >
         <input type="checkbox" className="task-check" onChange={handleComplete} checked={status} />
         <p className="task-description" onClick={handleComplete}>{description}</p>
         <button className={btn_style} type="button" onClick={handleOpenModal}>{<FaEdit/>}</button> 
-        <p className="task-date">{createdAt.getDay() + "/" +createdAt.getMonth() + "/" + createdAt.getFullYear()}</p>
+        <p className="task-date">{day + "/" + month + "/" + year}</p>
         <button className="task-btn" type="button" onClick={handleDelete}>{<FaTrash/>}</button> 
       </div>
 
@@ -104,7 +110,7 @@ export default function Task(props) {
           <div className="modal-input">
             <form method="post" onSubmit={handleEdit} id="form-edit">
               <input type="text" id="edit-task" value={description} onChange={(e) => setDescription(e.target.value)}/>
-              <button type="submit" id="btn-edit"> <FaEdit size={20}/> </button>
+              <button type="submit" id="btn-edit" onClick={handleCloseModal}> <FaEdit size={20}/> </button>
             </form>
           </div>
         </div>
