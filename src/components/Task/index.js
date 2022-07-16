@@ -4,9 +4,11 @@ import "../../styles/task.css";
 
 export default function Task(props) {
   const createdAt = new Date(props.data.createdAt);
+
   const day = createdAt.getDate();
   const month = createdAt.getMonth() + 1;
   const year = createdAt.getFullYear();
+
   const [description, setDescription] = useState(props.data.description);
   const status = props.data.completed;
   const id = props.data.id;
@@ -65,6 +67,7 @@ export default function Task(props) {
       setUpdate(Math.random);
       console.log(response.status);
 
+      //verification
       if( response.status === 400){
         window.location = '/'
       }

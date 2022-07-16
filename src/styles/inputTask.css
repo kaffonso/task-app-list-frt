@@ -7,7 +7,7 @@
 }
 
 #input-task{
-  width: 100%;
+  width: 60%;
   height: 3em;
   outline: none;
   padding: 1em;
@@ -17,7 +17,14 @@
   border-radius: 10px;
   -webkit-user-select:text;
   user-select: text;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
 }
+
+#input-task:focus{
+  width: 90%;
+}
+
 
 
 #btn-submit{
@@ -28,6 +35,10 @@
   position: relative;
   right: 3em;
   top: 0.1em;
+}
+
+#btn-submit:hover{
+  color:rgb(30, 115, 155); 
 }
 
 #form-submit{
