@@ -90,23 +90,23 @@ export default function Task(props) {
       <div className={task_style} >
         <input type="checkbox" className="task-check" onChange={handleComplete} checked={status} />
         <p className="task-description" onClick={handleComplete}>{description}</p>
-        <button className={btn_style} type="button" value="" onClick={handleOpenModal}>{<FaEdit/>}</button> 
+        <button className={btn_style} type="button" onClick={handleOpenModal}>{<FaEdit/>}</button> 
         <p className="task-date">{createdAt.getDay() + "/" +createdAt.getMonth() + "/" + createdAt.getFullYear()}</p>
-        <button className="task-btn" type="button" value="" onClick={handleDelete}>{<FaTrash/>}</button> 
+        <button className="task-btn" type="button" onClick={handleDelete}>{<FaTrash/>}</button> 
       </div>
 
       <div id={id} className="modal">
         <div className="modal-content">
-          <span className="close" onClick={handleCloseModal}><FaTimes /></span>
-          <form method="post" onSubmit={handleEdit} id="form-submit">
-            <input
-              type="text"
-              id="input-task"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-            <button type="submit" id="btn-submit"> <FaEdit/> </button>
-          </form>
+          <div className="modal-header">
+              <p>EDIT TASK</p>
+              <span className="close" onClick={handleCloseModal}><FaTimes /></span>
+          </div>
+          <div className="modal-input">
+            <form method="post" onSubmit={handleEdit} id="form-edit">
+              <input type="text" id="edit-task" value={description} onChange={(e) => setDescription(e.target.value)}/>
+              <button type="submit" id="btn-edit"> <FaEdit size={20}/> </button>
+            </form>
+          </div>
         </div>
       </div>
     </> 
