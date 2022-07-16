@@ -63,7 +63,12 @@ export default function Task(props) {
       });
 
       setUpdate(Math.random);
-      console.log(response);
+      console.log(response.status);
+
+      if( response.status === 400){
+        window.location = '/'
+      }
+
     } catch (err) {
       console.log(err)
     }
@@ -81,8 +86,6 @@ export default function Task(props) {
 
   const task_style = status === false ? "task" : "task task-completed";
   const btn_style = status === false ? "task-btn" : "task-btn-disabled";
-
-  console.log(createdAt.getMonth());
 
   return (
     <>
@@ -123,8 +126,7 @@ export default function Task(props) {
                 onChange={(e) => setDescription(e.target.value)}
               />
               <button type="submit" id="btn-edit" onClick={handleCloseModal}>
-                {" "}
-                <FaEdit size={20} title="Edit" />{" "}
+                <FaEdit size={20} title="Edit" /> Edit
               </button>
             </form>
           </div>
