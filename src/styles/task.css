@@ -6,19 +6,19 @@
   border-radius: 5px;
   margin: 0.1em 0em;
   color: #2e2e2e;
-  background-color:rgb(49, 225, 231);
+  background-color:rgb(136, 190, 211);
   border: 2px solid transparent;
   transition: 0.1s ease-in-out;
 }
 
 .task:hover{
   border: 2px solid white;
-  transition: 0.4s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .task-completed{
   color: white;
-  background-color: rgb(97, 99, 109);
+  background-color: rgb(77, 77, 77);
   text-decoration: line-through;
 }
 

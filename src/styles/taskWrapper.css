@@ -1,13 +1,13 @@
 .task-wrapper{
-  width: 40em;
+  width: 90%;
   display: flex;
   flex-direction: column;
-  height: 48vh;
+  height: 43.6vh;
   overflow: scroll;
 }
 
 .task-actions{
-  width: 40em;
+  width: 90%;
   display: flex;
   align-items: center;
   margin: 0em 0em 1em 0em;
@@ -55,7 +55,7 @@
 
 .task-counter{
   display: flex;
-  margin-top: 2em;
+  margin: 1em 0 1em 0;
   display: block;
   text-align: right;
   color: darkgrey;
