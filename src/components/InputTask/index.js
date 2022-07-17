@@ -13,7 +13,7 @@ export default function InputTask() {
 
     try {
       const body = { description };
-      const response = await fetch("http://localhost:3333/task", {
+      const response = await fetch("https://task-list-app-bck.herokuapp.com/task", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -9,7 +9,7 @@ export default function TaskWrapper() {
 
   const fecthAll = async () => {
     try {
-      const response = await fetch("http://localhost:3333/tasks");
+      const response = await fetch("https://task-list-app-bck.herokuapp.com/tasks");
       const data = await response.json();
 
       data.sort((a, b) => a.completed / b.completed); //order task by completed
@@ -22,7 +22,7 @@ export default function TaskWrapper() {
 
   const fecthCompleted = async () => {
     try {
-      const response = await fetch("http://localhost:3333/tasks/completed");
+      const response = await fetch("https://task-list-app-bck.herokuapp.com/tasks/completed");
       const data = await response.json();
 
       console.log(data);
@@ -37,7 +37,7 @@ export default function TaskWrapper() {
 
   const fecthUncompleted = async () => {
     try {
-      const response = await fetch("http://localhost:3333/tasks/uncompleted");
+      const response = await fetch("https://task-list-app-bck.herokuapp.com/tasks/uncompleted");
       const data = await response.json();
 
       data.sort((a, b) => a.id + b.id); //order task by id
@@ -50,7 +50,7 @@ export default function TaskWrapper() {
 
   const handleDeleteAll = async () => {
     try {
-      const response = await fetch(`http://localhost:3333/tasks`, {
+      const response = await fetch(`https://task-list-app-bck.herokuapp.com/tasks`, {
         method: "DELETE",
       });
 

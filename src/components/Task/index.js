@@ -18,7 +18,7 @@ export default function Task(props) {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:3333/task/${id}`, {
+      const response = await fetch(`https://task-list-app-bck.herokuapp.com/task/${id}`, {
         method: "DELETE",
       });
 
@@ -33,7 +33,7 @@ export default function Task(props) {
   const handleComplete = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3333/task/complete/${id}`,
+        `https://task-list-app-bck.herokuapp.com/task/complete/${id}`,
         {
           method: "PUT",
           headers: {
@@ -56,7 +56,7 @@ export default function Task(props) {
 
     try {
       const body = { description };
-      const response = await fetch(`http://localhost:3333/task/${id}`, {
+      const response = await fetch(`https://task-list-app-bck.herokuapp.com/task/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
