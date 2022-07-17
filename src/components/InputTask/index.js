@@ -23,9 +23,11 @@ export default function InputTask(props) {
       });
 
       console.log(response);
-      setUpdate(Math.random)
+      setUpdate(Math.random);
+
     } catch (err) {
 
+      console.log(err)
     }
   };
 
@@ -35,6 +37,7 @@ export default function InputTask(props) {
         <input
           type="text"
           name="task"
+          required
           id="input-task"
           placeholder="Add a new task"
           value={description}

@@ -124,6 +124,7 @@ export default function Task(props) {
             <form method="post" onSubmit={handleEdit} id="form-edit">
               <input
                 type="text"
+                required
                 id="edit-task"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
