@@ -2,8 +2,9 @@ import { useState } from "react";
 import { FaPlusSquare } from "react-icons/fa";
 import '../../styles/inputTask.css'
 
-export default function InputTask() {
+export default function InputTask(props) {
   const [description, setDescription] = useState("");
+  const setUpdate = props.setUpdate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,7 +23,7 @@ export default function InputTask() {
       });
 
       console.log(response);
-      window.location = '/'
+      setUpdate(Math.random)
     } catch (err) {
 
     }

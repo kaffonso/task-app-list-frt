@@ -3,9 +3,10 @@ import { FaCheck } from "react-icons/fa";
 import Task from "../Task";
 import "../../styles/taskWrapper.css";
 
-export default function TaskWrapper() {
+export default function TaskWrapper(props) {
   const [tasks, setTasks] = useState([]);
   const [update, setUpdate] = useState([]);
+  const updateViaInput = props.update
 
   const fecthAll = async () => {
     try {
@@ -63,7 +64,7 @@ export default function TaskWrapper() {
 
   useEffect(() => {
     fecthAll();
-  }, [update]);
+  }, [update, updateViaInput]);
 
   const no_tasks_style = tasks.length === 0 ? "no-tasks" : "no-tasks-disabled";
   const task_counter_style = tasks.length === 0 ? "task-counter task-counter-disabled" : "task-counter";
