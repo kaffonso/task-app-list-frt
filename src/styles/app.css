@@ -29,6 +29,16 @@ h1{
   height: 90vh;
   width: 50%;
   background-color: white;
-  box-shadow: 1px solid black;
   border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.158); 
+}
+
+@media only screen and (max-width: 800px) {
+  .container{
+    width: 80%;
+  }
+
+  h1{
+    font-size: 1.3em;
+  }
 }
